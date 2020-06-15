@@ -1,0 +1,89 @@
+<!--index.ttml-->
+<view class="container" id="root">
+
+  <view class="row">
+    <view class="temperature">
+      {{now.tmp}}
+    </view>
+    <view>
+      ℃
+    </view>
+    <view class="colomn parentRight">
+      <view class="parentRight title1">
+        {{basic.parent_city}}
+      </view>
+      <button type="default" size="default" bindtap="defaultTap" class="parentRight"> 
+        切换
+      </button> 
+    </view>
+    
+  </view>
+  
+
+  <view class="weather today">
+    <view>
+      <view class='date'>
+        今天
+      </view>
+    <view class='location'>
+      {{basic.location}}/{{basic.parent_city}}
+    </view>
+    <view class='tmp'>
+      {{today.tmp_min}}℃~{{today.tmp_max}}℃
+    </view>
+    <view class='cond_txt'>
+      {{today.cond_txt_d}}
+    </view>
+  </view>
+  <view>
+    <view class='weather_icon'>
+    <image src='{{todayIcon}}'></image>
+    </view>
+    <view class='lastUpdateDate'>
+    最后更新：{{update}}
+    </view>
+  </view>
+</view>
+<view class="weather tomorrow">
+  <view>
+    <text>明天</text>
+  <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+  <view class='tmp'>{{tomorrow.tmp_min}}℃~{{tomorrow.tmp_max}}℃</view>
+  <view class='cond_txt'>{{tomorrow.cond_txt_d}}</view>
+</view>
+<view>
+  <view class='weather_icon'>
+  <image src='{{tomorrowIcon}}'></image>
+  </view>
+  <view class='lastUpdateDate'>最后更新：{{update}}</view>
+  </view>
+</view>
+<view class="weather aftertomorrow">
+  <view>
+  <text>后天</text>
+    <view class='location'>{{basic.location}}/{{basic.parent_city}}</view>
+    <view class='tmp'>{{afterTomor.tmp_min}}℃~{{afterTomor.tmp_max}}℃</view>
+    <view class='cond_txt'>{{afterTomor.cond_txt_d}}</view>
+  </view>
+  <view>
+    <view class='weather_icon'>
+    <image src='{{afterTomorIcon}}'></image>
+  </view>
+  <view class='lastUpdateDate'>
+    最后更新：{{update}}
+  </view>
+</view>
+</view>
+<form bindsubmit='search'>
+<view class="row">
+  <text>城市经度</text>
+  <input type="number" placeholder="longitude" name="longitude"/>
+</view>
+<view class="row">
+  <text>城市纬度</text>
+  <input type="number" placeholder="latitude" name="latitude"/>
+</view>
+<button type="default" size="default" bindtap="defaultTap" form-type='submit'> 查询 </button>
+</form>
+
+</view>
